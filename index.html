@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -87,34 +86,34 @@
     <h1>PaddysPub Wi-Fi</h1>
     <div class="sub">Guest Network Access Portal</div>
 
-```
-<button onclick="connect()">Connect to Network</button>
+    <button onclick="connect()">Connect to Network</button>
 
-<div class="status" id="status">
-    <div class="spinner"></div>
-    Establishing secure connection...
-</div>
-
-<div class="success" id="success">
-    ✓ Connection Successful
-    <div style="font-weight: normal; margin-top: 8px; color:#444;">
-        Redirecting to internet...
+    <div class="status" id="status">
+        <div class="spinner"></div>
+        Establishing secure connection...
     </div>
-</div>
-```
 
+    <div class="success" id="success">
+        ✓ Connection Successful
+        <div style="font-weight: normal; margin-top: 8px; color:#444;">
+            Redirecting to internet...
+        </div>
+    </div>
 </div>
 
 <script>
 function connect() {
+    // Hide the button and show the loading spinner
     document.querySelector("button").style.display = "none";
     document.getElementById("status").style.display = "block";
 
+    // After 2.5 seconds, show success message
     setTimeout(() => {
         document.getElementById("status").style.display = "none";
         document.getElementById("success").style.display = "block";
     }, 2500);
 
+    // After 4.2 seconds, execute the Rickroll
     setTimeout(() => {
         window.location.href = "https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1";
     }, 4200);
