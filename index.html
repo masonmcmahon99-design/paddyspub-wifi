@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PaddysPub Guest Wi-Fi</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+```
+    .card {
+        background: white;
+        width: 320px;
+        padding: 30px;
+        border-radius: 16px;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+        text-align: center;
+    }
+
+    h1 {
+        margin-top: 0;
+        font-size: 24px;
+    }
+
+    .signal {
+        color: #666;
+        margin-bottom: 25px;
+    }
+
+    button {
+        background: #007aff;
+        color: white;
+        border: none;
+        border-radius: 10px;
+        padding: 14px 24px;
+        font-size: 17px;
+        cursor: pointer;
+        width: 100%;
+    }
+
+    button:hover {
+        opacity: 0.9;
+    }
+
+    #status {
+        display: none;
+        margin-top: 20px;
+        color: #555;
+    }
+
+    .spinner {
+        margin: 15px auto;
+        width: 24px;
+        height: 24px;
+        border: 3px solid #ddd;
+        border-top: 3px solid #007aff;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+        to { transform: rotate(360deg); }
+    }
+</style>
+```
+
+</head>
+<body>
+    <div class="card">
+        <h1>PaddysPub Guest Wi-Fi</h1>
+
+```
+    <div class="signal">
+        Signal Strength: Excellent
+    </div>
+
+    <button onclick="connect()">
+        Join PaddysPub
+    </button>
+
+    <div id="status">
+        <div class="spinner"></div>
+        Connecting to network...
+    </div>
+</div>
+
+<script>
+    function connect() {
+        document.querySelector("button").style.display = "none";
+        document.getElementById("status").style.display = "block";
+
+        setTimeout(() => {
+            window.location.href = "https://youtu.be/dQw4w9WgXcQ";
+        }, 3500);
+    }
+</script>
+```
+
+</body>
+</html>
