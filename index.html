@@ -86,7 +86,7 @@
     <h1>PaddysPub Wi-Fi</h1>
     <div class="sub">Guest Network Access Portal</div>
 
-    <button onclick="connect()">Connect to Network</button>
+    <button id="connectBtn" onclick="connect()">Connect to Network</button>
 
     <div class="status" id="status">
         <div class="spinner"></div>
@@ -95,28 +95,34 @@
 
     <div class="success" id="success">
         ✓ Connection Successful
-        <div style="font-weight: normal; margin-top: 8px; color:#444;">
-            Redirecting to internet...
+        <div style="font-weight: normal; margin-top: 15px; color:#444;">
+            <button onclick="launchApp()" style="background: #1a7f37; margin-top: 10px;">Continue to Internet</button>
         </div>
     </div>
+
 </div>
 
 <script>
 function connect() {
-    // Hide the button and show the loading spinner
-    document.querySelector("button").style.display = "none";
+    // Hide the initial connect button and show the loading spinner
+    document.getElementById("connectBtn").style.display = "none";
     document.getElementById("status").style.display = "block";
 
-    // After 2.5 seconds, show success message
+    // After 2.5 seconds, show the success message and the new "Continue" button
     setTimeout(() => {
         document.getElementById("status").style.display = "none";
         document.getElementById("success").style.display = "block";
     }, 2500);
+}
 
-    // After 4.2 seconds, execute the Rickroll
+function launchApp() {
+    // 1. Try to force open the YouTube App directly via deep link
+    window.location.href = "vnd.youtube://dQw4w9WgXcQ";
+
+    // 2. Fallback: If the app doesn't open within 500ms, load the web version
     setTimeout(() => {
-        window.location.href = "https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1";
-    }, 4200);
+        window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+    }, 500);
 }
 </script>
 
